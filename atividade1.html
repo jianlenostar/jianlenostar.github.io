@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
 
-    <label for="nome">Nome completo:</label>
-    <input id="nome" type="text">
+    <label for="nomeCompleto">nome completo:</label>
+    <input id="nomeCompleto" type="text">
 
+    <br>
+    <button onclick="separarNomeCompleto()">resenha!</button>
 
-<br>
-   <button onclick="myFunction()">separar nome</button>
+    <br><br>
+    <input id="nome" placeholder="">
+    <input id="sobrenome" placeholder=""">
 
-   <script>
+    <script>
+      function separarNomeCompleto(){
+        let nomeCompleto = document.getElementById("nomeCompleto").value.trim()
+        let partes = nomeCompleto.split(" ")
 
-    function myFunction(name){
-    let nome = document.getElementById("nome")
+        let nome = ""
+        let sobrenome = ""
 
+        if(partes.length > 1){
+          nome = partes[0]
+          sobrenome = partes[1]
+        }else{
+          nome = partes[0]
+          sobrenome = ""
+        }
 
-    }
-   </script>
+        document.getElementById("nome").value = nome
+        document.getElementById("sobrenome").value = sobrenome
+      }
+    </script>
 
 </body>
 </html>
