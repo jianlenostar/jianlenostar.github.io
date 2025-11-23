@@ -13,27 +13,16 @@
     <button onclick="separarNomeCompleto()">resenha!</button>
 
     <br><br>
-    <input id="nome" placeholder="">
-    <input id="sobrenome" placeholder=""">
+    <input id="nome">
+    <input id="sobrenome">
 
     <script>
       function separarNomeCompleto(){
-        let nomeCompleto = document.getElementById("nomeCompleto").value.trim()
-        let partes = nomeCompleto.split(" ")
+        let texto = document.getElementById("nomeCompleto").value;
+        let partes = texto.split(" ");
 
-        let nome = ""
-        let sobrenome = ""
-
-        if(partes.length > 1){
-          nome = partes[0]
-          sobrenome = partes[1]
-        }else{
-          nome = partes[0]
-          sobrenome = ""
-        }
-
-        document.getElementById("nome").value = nome
-        document.getElementById("sobrenome").value = sobrenome
+        document.getElementById("nome").value = partes[0];
+        document.getElementById("sobrenome").value = partes[1];
       }
     </script>
 
